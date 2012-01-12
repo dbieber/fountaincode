@@ -1,3 +1,4 @@
+import json
 import random
 from utils import randChunkNums
 
@@ -10,3 +11,11 @@ class Droplet:
 	def chunkNums(self):
 		random.seed(self.seed)
 		return randChunkNums(self.num_chunks)
+
+	def toString(self):
+		return json.dumps(
+			{
+				'seed':self.seed,
+				'num_chunks':self.num_chunks,
+				'data':self.data
+			})

@@ -16,19 +16,5 @@ With this algorithm implemented, I was able to examine its efficiency. Experimen
 """
 
 f = Fountain(m)
-g = Glass(f.num_chunks)
 
-N = 1
-count = 0
-for i in xrange(N):
-	f = Fountain(m)
-	g = Glass(f.num_chunks)
-	while not g.isDone():
-		d = f.droplet()
-		g.addDroplet(d)
-		count+=1
-		
-print count/N
-	#print g.getString()
-	
 	
