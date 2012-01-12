@@ -15,7 +15,7 @@ def droplet():
 @app.route("/droplet/<amt>")
 def droplets(amt):
     out = []
-    for x in xrange(amt):
+    for x in range(int(amt)):
         out.append(f.droplet().toString())
     return json.dumps(out)
 
