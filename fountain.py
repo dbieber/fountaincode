@@ -4,7 +4,7 @@ from math import ceil
 from utils import xor, randChunkNums
 
 class Fountain:
-    def __init__(self, data, chunk_size=8, seed=None):
+    def __init__(self, data, chunk_size=32, seed=None):
         self.data = data
         self.chunk_size = chunk_size
         self.num_chunks = int(ceil(len(data) / float(chunk_size)))
