@@ -1,9 +1,19 @@
 <html>
+<head><style type="text/css">
+.text {
+height: 400px;
+overflow-y: scroll;
+}
+.droplets {
+height: 200px;
+overflow-y: scroll;
+}
+</style></head>
 <p>{{num_droplets}} droplets caught.
 <p>Catch more droplets: <a href="/glass/{{id}}/fill/1">1</a> <a href="/glass/{{id}}/fill/10">10</a> <a href="/glass/{{id}}/fill/100">100</a> <a href="/glass/{{id}}/fill/1000">1000</a>
-<p>Reconstruction of text:
+<p class="text">Reconstruction of text:
 <p>{{text}}
 <p>Droplets:
-<p><table>{%for droplet in droplets%}<tr><td>Seed: {{droplet.seed}}</td><td> Data: {{droplet.data}}</td></tr>
+<p><table class="droplets">{%for droplet in droplets%}<tr><td>Seed: {{droplet.seed}}</td><td> Data: {{droplet.data}}</td></tr>
 {%endfor%}
 </html>
