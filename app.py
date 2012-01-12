@@ -11,7 +11,7 @@ def hello():
 @app.route("/droplet")
 def droplet():
     return f.droplet().toString()
-	
+
 @app.route("/droplet/<amt>")
 def droplets(amt):
     out = []
