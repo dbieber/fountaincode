@@ -15,9 +15,9 @@ def droplet():
 @app.route("/droplet/<amt>")
 def droplets(amt):
     out = []
-	for x in xrange(amt):
-		out.append(f.droplet().toString())
-	return json.dumps(out)
+    for x in xrange(amt):
+        out.append(f.droplet().toString())
+    return json.dumps(out)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
