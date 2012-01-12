@@ -15,6 +15,4 @@ With this algorithm implemented, I was able to examine its efficiency. Experimen
 	However, fountain codes have the downside of transmitting files only in their entirety. If insufficient droplets are received, there is no guarantee that any continuous part of the file will be readable. Other methods exist for applications where it would be better to receive the file in continuous segments. For such applications, such as watching YouTube videos, streaming data is more applicable. The water analogues never seem to end.
 """
 
-f = Fountain(m)
-
-	
+f = Fountain(m)	
