@@ -32,13 +32,15 @@ def pickGlass():
 def glass(id):
     id = int(id)
     g = getGlass(id)
+    message = "%d of %d chunks reconstructed." % (g.chunksDone(), g.num_chunks)
     
     return render_template('glass.html',
         num_droplets=len(g.droplets),
         source="/droplet",
         text=g.getString(),
         id=id,
-        droplets=[d for d in g.droplets]
+        droplets=[d for d in g.droplets],
+        message=message
         )
      
 @app.route("/glass/<id>/fill")

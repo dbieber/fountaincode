@@ -1,19 +1,41 @@
 <html>
 <head><style type="text/css">
+p {
+margin: 0;
+font-family: Arial;
+}
+.region {
+margin: 5px;
+border: solid;
+padding: 3px;
+}
+.info {
+margin: 5px;
+}
+.text, .droplets {
+overflow-y: scroll;
+margin: 5px;
+}
 .text {
 height: 400px;
-overflow-y: scroll;
 }
 .droplets {
 height: 100px;
-overflow-y: scroll;
 }
 </style></head>
-<p>{{num_droplets}} droplets caught. {{message}}
-<p>Catch more droplets: <a href="/glass/{{id}}/fill/1">1</a> <a href="/glass/{{id}}/fill/10">10</a> <a href="/glass/{{id}}/fill/100">100</a> <a href="/glass/{{id}}/fill/1000">1000</a>
+<div class="region">
+<p>Summary of Glass {{id}}:
+<p class="info">{{num_droplets}} droplets caught. {{message}}
+<p class="info">Catch more droplets: <a href="/glass/{{id}}/fill/1">1</a> <a href="/glass/{{id}}/fill/10">10</a> <a href="/glass/{{id}}/fill/100">100</a> <a href="/glass/{{id}}/fill/1000">1000</a>
+</div>
+<div class="region">
 <p>Reconstruction of text:
 <p class="text">{{text}}
+</div>
+<div class="region">
 <p>Droplets:
-<p class="droplets"><table>{%for droplet in droplets%}<tr><td>Seed: {{droplet.seed}}</td><td> Data: {{droplet.data}}</td></tr>
-{%endfor%}
+<p class="droplets">{%if droplets%}<table>{%for droplet in droplets%}<tr><td>Seed: <code>{{droplet.seed}}</code></td><td> Data: <code>"{{droplet.data}}"</code></td></tr>
+{%endfor%}{%else%}
+None{%endif%}
+</div>
 </html>

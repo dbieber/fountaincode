@@ -36,3 +36,4 @@ class Glass:
         for c in self.chunks:
             if c is not None:
                 count+=1
+        return count
