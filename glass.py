@@ -31,3 +31,8 @@ class Glass:
     def isDone(self):
         return None not in self.chunks
 
+    def chunksDone(self):
+        count = 0
+        for c in self.chunks:
+            if c is not None:
+                count+=1
