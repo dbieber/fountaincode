@@ -18,10 +18,10 @@ Wikipedia's explanation of fountain codes: 		http://en.wikipedia.org/wiki/Founta
 A particularly good explanation of fountain codes:	http://blog.notdot.net/tag/fountain-codes
 
 Source Files
-fountain.py defines the Fountain, produces Droplets according to the Fountain Code implementation discussed in the paper.
-droplet.py defines the Droplet, containing a seed and the XOR'd data.
-glass.py defines a Glass, used to collect Droplets and reconstruct the original data
-utils.py contains helper functions used to make the Fountain and Droplets compatible.
-client.py generates a fountain for a particular message, this essay.
-app.py, Procfile, requirements.txt turn this project into a web app, runnable on Heroku.
-glass.html, home.html are templates, used by the web app to render pages.
+[fountain.py](fountain.py) defines the Fountain, produces Droplets according to the Fountain Code implementation discussed in the paper.
+[droplet.py](droplet.py) defines the Droplet, containing a seed and the XOR'd data.
+[glass.py](glass.py) defines a Glass, used to collect Droplets and reconstruct the original data
+[utils.py](utils.py) contains helper functions used to make the Fountain and Droplets compatible.
+[client.py](client.py) generates a fountain for a particular message, this essay.
+[app.py](app.py), [Procfile](Procfile), [requirements.txt](requirements.txt) turn this project into a web app, runnable on Heroku.
+[glass.html](glass.html), [home.html](home.html) are templates, used by the web app to render pages.
