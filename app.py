@@ -1,8 +1,9 @@
-import os
-import json
-from flask import Flask, render_template, redirect
 from client import f
+from flask import Flask, render_template, redirect
 from glass import Glass
+
+import json
+import os
 import random
 app = Flask(__name__)
 
@@ -23,7 +24,7 @@ def droplets(amt):
     for x in range(amt):
         out.append(f.droplet().toString())
     return json.dumps(out)
-    
+
 @app.route("/glass")
 def pickGlass():
     return redirect("/glass/%d" % random.randint(0,2**15-1))
@@ -33,7 +34,7 @@ def glass(id):
     id = int(id)
     g = getGlass(id)
     message = "%d of %d chunks reconstructed." % (g.chunksDone(), g.num_chunks)
-    
+
     return render_template('glass.html',
         num_droplets=len(g.droplets),
         source="/droplet",
@@ -42,26 +43,26 @@ def glass(id):
         droplets=[d for d in g.droplets],
         message=message
         )
-     
+
 @app.route("/glass/<id>/fill")
 def fill(id):
     return fillAmt(id, 1)
-    
+
 @app.route("/glass/<id>/fill/<amt>")
 def fillAmt(id, amt):
     id = int(id)
     amt = int(amt)
-    
+
     g = getGlass(id)
     for i in xrange(amt):
         g.addDroplet(f.droplet())
     return redirect("/glass/%d" % id)
-        
+
 def getGlass(id):
     id = int(id)
     g = None
     if id not in glasses:
-        g = Glass(f.num_chunks) 
+        g = Glass(f.num_chunks)
         glasses[id] = g
     return glasses[id]
 

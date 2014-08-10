@@ -1,6 +1,7 @@
-import time
 from fountain import Fountain
 from glass import Glass
+
+import time
 
 m = """
 Fountain codes provide a way for data to be transmitted across a lossy network connection from a single source to many users. The name "fountain code" arises because fountain codes behave analogously to a fountain. A file being transmitted is analogous to a glass of water from the fountain. To fill the glass (or reconstruct the file), you need to catch enough droplets from the fountain such that your glass becomes full. It isn't important which droplets of water you catch in your glass; once you have enough, the glass is full (and the file can be reconstructed). Fountain codes work in the same way, but with information instead of water. The data being transferred can be algorithmically encoded as an arbitrarily large number of chunks, or droplets, that can be sent over the network. The receiving client then needs to receive some number of these droplets in order to reconstruct the original file. It doesn't matter which droplets are received or in what order they are received, and it doesn't matter which are lost during transmission. This is the beauty of fountain codes. As long as a sufficient number of droplets are received, the original file can be reconstructed completely.
@@ -16,4 +17,4 @@ With this algorithm implemented, I was able to examine its efficiency some. Expe
 However, fountain codes have the downside of transmitting files only in their entirety. If insufficient droplets are received, there is no guarantee that any continuous part of the file will be readable. Other methods exist for applications where it would be better to receive the file in continuous segments. For such applications, such as watching YouTube videos, streaming data is more applicable. The water analogues never seem to end.
 """
 
-f = Fountain(m)	
+f = Fountain(m)
