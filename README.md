@@ -48,4 +48,4 @@ A particularly good explanation of fountain codes: [http://blog.notdot.net/tag/f
 
 [app.py](app.py), [Procfile](Procfile), [requirements.txt](requirements.txt) turn this project into a web app, runnable on Heroku.
 
-[glass.html](glass.html), [home.html](home.html) are templates, used by the web app to render pages.
+[glass.html](templates/glass.html), [home.html](templates/home.html) are templates, used by the web app to render pages.
